@@ -5,11 +5,9 @@ use std::io;
 fn main() {
     println!("Guess the number!");
 
-    let mut keep_going = true;
-
     let answer = thread_rng().gen_range(1, 101);
 
-    while keep_going {
+    loop {
         let mut guess = String::new();
 
         println!("What's your guess?");
@@ -31,7 +29,7 @@ fn main() {
                     "You guessed {}, the answer was {}. You are correct.",
                     guess, answer
                 );
-                keep_going = false
+                break;
             },
         }
     }
